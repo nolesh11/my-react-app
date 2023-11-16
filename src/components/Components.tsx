@@ -141,17 +141,45 @@ import React from "react";
 // const words: Array<string> = ['hello', 'bye']
 // const bigInt: Array<number> = [43523432,6453234,665432,6754]
 
+
+
 function calc (a: number, b: number) {
   return Number(a + b)
 }
 
-calc(5,6)
+function multiply (a: number, b: number) {
+  return Number(a * b)
+}
 
+function isEven (a: number) {
+  return (typeof a === 'number' ? true : false)
+}
 
+function capitalize (a: string) {
+  return a.charAt(0).toUpperCase() + a.slice(1)
+}
 
+function myArr<T> (myArray: T[]): T[] {
+  const reversedArr = myArray.reverse();
+  return reversedArr
+}
 
+function maxNum (numArr: number[]): number {
+  return Math.max(...numArr)
+}
+
+function filterStrings<T> (newArr: T[]) {
+  return newArr.filter((elem) => typeof elem === 'string')
+}
+
+function calculateAverage (numArr: number[]) {
+  const numSum = numArr.reduce((acc, value) => acc + value, 0)
+  const avg = numSum / numArr.length
+  return avg
+}
 
 export const ComponentOne = (
+  
   // { textOne,
   //   textTwo,
   //   textThree,
@@ -166,6 +194,7 @@ export const ComponentOne = (
   ) => {
   return ( 
     <>
+    
       {/* <p>{textOne}</p>
       <p>{textTwo}</p>
       <p>{textThree}</p>
